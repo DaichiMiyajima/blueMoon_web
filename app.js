@@ -46,19 +46,8 @@ app.get('/contact', contact);
 app.get('/adminwork', adminwork);
 app.post('/insertWork', adminwork);
 
-/*
-app.post('/insertWork', type ,function(req, res) {
-console.log("通過");
-//console.log(req);
-console.log(req.file.fieldname);
-	//mysql.insertMyWork(req.body.workName,req.body.description,'',function(data){
-      //  res.send(data);
-	//});
-});
-*/
 
-
-app.listen(8080);
+app.listen(3001);
 
 
 // catch 404 and forward to error handler
