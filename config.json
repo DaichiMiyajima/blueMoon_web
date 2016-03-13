@@ -1,12 +1,12 @@
 {
-	"DB_HOST":"localhost",
+	"L_DB_HOST":"localhost",
+	"L_DB_DATABASE":"blueMoon",
+	"L_DB_USER":"root",
+	"L_DB_PASSWORD":"root",
+	"L_DB_PORT":"3306",
+	"DB_HOST":"rdscandydb01.cnrh9equdn0d.ap-northeast-1.rds.amazonaws.com",
 	"DB_DATABASE":"blueMoon",
 	"DB_USER":"root",
-	"DB_PASSWORD":"root",
-	"DB_PORT":"3306",
-	"H_DB_HOST":"rdscandydb01.cnrh9equdn0d.ap-northeast-1.rds.amazonaws.com",
-	"H_DB_DATABASE":"blueMoon",
-	"H_DB_USER":"root",
-	"H_DB_PASSWORD":"shoppaicdyMits!",
-	"H_DB_PORT":"7392"
+	"DB_PASSWORD":"shoppaicdyMits!",
+	"DB_PORT":"7392"
 }
