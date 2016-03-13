@@ -1,0 +1,47 @@
+/*===============================================
+●style.css 画面の横幅が550px以上
+===============================================*/
+@media screen and (min-width: 550px){
+.youtube2 {
+  position: relative;
+  width: 100%;
+  min-height:400px !important;
+  max-height:400px !important;
+}
+.youtube2 iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  min-height:274px !important;
+  max-height:400px !important;
+}
+}
+
+/*===============================================
+●tablet.css 画面の横幅が550pxまで
+===============================================*/
+@media screen and (max-width: 550px){
+.youtube2 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  min-height:272px !important;
+}
+.youtube2 iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+  min-height:274px !important;
+  max-height:400px !important;
+}
+}
+
+
+.index{
+	margin-top:100px;
+}
+
