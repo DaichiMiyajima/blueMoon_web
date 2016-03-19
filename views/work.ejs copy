@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author"      content="Daichi Miyajima">
+	<meta property="og:title" content="MoonArt" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="http://moonart-craft.com" />
+	<meta property="og:image" content="http://moonart-craft.com/public/image/moonart-craft.jpeg" />
+	<meta property="og:site_name" content="MoonArt" />
+	<meta property="og:description" content="I'll make your only one jewelry." />
+	<title>Moon Art</title>
+	<link rel="shortcut icon" href="../public/image/BlueMoon.png">
+	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/bootstrap-glyphicons.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/message.css">
+	<script type="text/javascript" src="../public/timeline/js/jquery-1.11.0.min.js"></script>
+	<!-- sweet alert-->
+	<script src="../public/javascripts/lib/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../public/javascripts/lib/dist/sweetalert.css">
+	<script src="../public/javascripts/confirmation.js"></script>
+	<!-- Custom styles for our template -->
+	<link rel="stylesheet" href="../public/assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="../public/assets/css/main.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<!-- sweet alert-->
+	<script src="../public/javascripts/lib/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../public/javascripts/lib/dist/sweetalert.css">
+	<script src="../public/javascripts/commonhtml.js"></script>
+	<style type="text/css">
+		.form-control
+		{
+			font-size: 16px ;
+		}
+	</style>
+</head>
+
+<body class="home">
+	<!-- Header -->
+		<div id="header"></div>
+	<!-- /Header -->
+	<div class="container">
+		<ul class="timeline" style="margin-top: 100px;z-index: 1;">
+			<% for(var i=0;i<data.length;i++){ %>
+			<% if(i % 3 == 0){ %>
+				<li class="timeline-inverted">
+			<% }else if(i % 5 == 0){ %>
+				<li class="timeline-inverted">
+			<% }else{ %>
+				<li>
+			<% } %>
+			<div class="timeline-panel","<%= data[i].name %>")'>
+				<div class="tl-heading">
+					<div class="inf">
+						<h4><%= data[i].name %></h4>
+					</div>
+					<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <%= data[i].date %></small></p>
+				</div>
+				<div class="tl-body">
+					<p><%= data[i].description %></p>
+					<p><img src=<%= data[i].picturePath %> alt="" ></img></p>
+				</div>
+			</div>
+		</li>
+			<% }%>    
+		</ul>
+	</div>
+	<!-- footer -->
+		<div id="footer"></div>
+	<!-- /footer -->
+</div>
+	 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="../public/assets/js/headroom.min.js"></script>
+	<script src="../public/assets/js/jQuery.headroom.min.js"></script>
+	<script src="../public/assets/js/template.js"></script>
+	<script src="../public/javascripts/lib/animatedModal.min.js"></script>
+	<script type="text/javascript">
+		writeHeader();
+		writeFooter();
+	</script>
+</body>
+</html>
