@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/bootstrap-glyphicons.css">
 	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/message.css">
+	<link rel="stylesheet" type="text/css" media="all" href="../public/timeline/css/work.css">
 	<script type="text/javascript" src="../public/timeline/js/jquery-1.11.0.min.js"></script>
 	<!-- sweet alert-->
 	<script src="../public/javascripts/lib/dist/sweetalert.min.js"></script>
@@ -35,43 +36,80 @@
 		{
 			font-size: 16px ;
 		}
+		.card {
+    width: 310px;
+    background: #CED0FD;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px #5742C7;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
+.image{
+	height: 200px;
+	overflow: hidden;
+}
 	</style>
 </head>
 
 <body class="home">
-	<!-- Header -->
+		<!-- Header -->
 		<div id="header"></div>
-	<!-- /Header -->
-	<div class="container">
-		<ul class="timeline" style="margin-top: 100px;z-index: 1;">
-			<% for(var i=0;i<data.length;i++){ %>
-			<% if(i % 3 == 0){ %>
-				<li class="timeline-inverted">
-			<% }else if(i % 5 == 0){ %>
-				<li class="timeline-inverted">
-			<% }else{ %>
-				<li>
-			<% } %>
-			<div class="timeline-panel","<%= data[i].name %>")'>
-				<div class="tl-heading">
-					<div class="inf">
-						<h4><%= data[i].name %></h4>
+		<!-- /Header -->
+			<div class="container" style="margin-top: 90px;">
+				<div class="row">
+				<% for(var i=0;i<data.length;i++){ %>
+					<div class="col-md-4 col-sm-6 col-xs-12 highlight">
+						<section class="card" >
+							<div class="image">
+								<img class="card-img" src=<%= data[i].picturePath %> alt="">
+							</div>
+							<div class="card-content">
+								<h1 class="card-title"><%= data[i].name %></h1>
+								<p class="card-text"><%= data[i].description %></p>
+							</div>
+							<!--<div class="card-link">
+								<a href="http://webcreatorbox.com/about">About</a>
+								<a href="http://webcreatorbox.com/">Website</a>
+							</div>-->
+						</section>
 					</div>
-					<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> <%= data[i].date %></small></p>
-				</div>
-				<div class="tl-body">
-					<p><%= data[i].description %></p>
-					<p><img src=<%= data[i].picturePath %> alt="" ></img></p>
+				<% }%>
 				</div>
 			</div>
-		</li>
-			<% }%>    
-		</ul>
-	</div>
-	<!-- footer -->
+		<!-- footer -->
 		<div id="footer"></div>
-	<!-- /footer -->
-</div>
+		<!-- /footer -->
+	</div>
 	 <!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
