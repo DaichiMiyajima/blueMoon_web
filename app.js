@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer = require('multer');
-
+var xml = require('xml');
 
 var index = require('./routes/index');
 var appform = require('./routes/appform');
@@ -48,6 +48,10 @@ app.post('/insertWork', adminwork);
 
 app.listen(3001);
 
+
+app.get('/sitemap.xml', function(req, res) {
+	res.download(path.join(__dirname, '/views/sitemap.xml'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
