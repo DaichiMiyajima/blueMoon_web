@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var appform = require('./routes/appform');
 var work = require('./routes/work');
 var contact = require('./routes/contact');
@@ -39,7 +39,8 @@ app.use('/views/assets',express.static(__dirname + '/views/assets'));
 var upload = multer({ dest: '../public/uploadfiles/'});
 var type = upload.single('pitcure');
 
-app.use('/', routes);
+app.use('/', index);
+app.use('/googlead6331586cdd355c.html', index);
 app.post('/appform', appform);
 app.get('/work', work);
 app.get('/contact', contact);
