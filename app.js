@@ -40,7 +40,6 @@ var upload = multer({ dest: '../public/uploadfiles/'});
 var type = upload.single('pitcure');
 
 app.use('/', index);
-app.use('/googlead6331586cdd355c.html', index);
 app.post('/appform', appform);
 app.get('/work', work);
 app.get('/contact', contact);
