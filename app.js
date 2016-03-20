@@ -6,6 +6,8 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var xml = require('xml');
+var xml2js = require('xml2js');
+var fs = require('fs');
 
 var index = require('./routes/index');
 var appform = require('./routes/appform');
@@ -50,14 +52,21 @@ app.listen(3001);
 
 
 app.get('/sitemap.xml', function(req, res) {
-	res.download(path.join(__dirname, '/views/sitemap.xml'));
+	var parser = new xml2js.Parser();
+	fs.readFile(__dirname + '/views/sitemap.xml', function (err, data) {
+		parser.parseString(data, function (err, result) {
+		console.dir(result);
+		res.send(result);
+		});
+	});
+	
 });
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+	var err = new Error('Not Found');
+	err.status = 404;
+	next(err);
 });
 
 // error handlers
