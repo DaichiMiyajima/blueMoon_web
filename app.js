@@ -14,6 +14,7 @@ var appform = require('./routes/appform');
 var work = require('./routes/work');
 var contact = require('./routes/contact');
 var adminwork = require('./routes/adminwork');
+var moonart = require('./routes/moonart');
 
 var app = express();
 
@@ -45,6 +46,7 @@ app.use('/', index);
 app.post('/appform', appform);
 app.get('/work', work);
 app.get('/contact', contact);
+app.get('/moonart', moonart);
 app.get('/adminwork', adminwork);
 app.post('/insertWork', adminwork);
 
@@ -55,7 +57,6 @@ app.get('/sitemap.xml', function(req, res) {
 	var parser = new xml2js.Parser();
 	fs.readFile(__dirname + '/views/sitemap.xml', function (err, data) {
 		parser.parseString(data, function (err, result) {
-		console.dir(result);
 		res.send(result);
 		});
 	});
@@ -74,23 +75,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
-  });
+	app.use(function(err, req, res, next) {
+		res.status(err.status || 500);
+		res.render('error', {
+			message: err.message,
+			error: err
+		});
+	});
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+	res.status(err.status || 500);
+	res.render('error', {
+		message: err.message,
+		error: {}
+	});
 });
 
 

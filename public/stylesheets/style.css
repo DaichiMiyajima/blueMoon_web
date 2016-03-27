@@ -40,8 +40,43 @@
 }
 }
 
+#animation{
+	margin-right: 0;
+	margin-left: 0;
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 100% !important;
+}
 
 .index{
 	margin-top:100px;
+}
+
+
+#moonartmake{
+	color:#FFF;
+	background-color:#666666;
+}
+
+#moonartrepair{
+	color:#FFF;
+	background-color:#666666;
+}
+
+#moonartreform{
+	color: #000;
+  background-color: #FFFFFF;
+}
+
+.border{
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
+}
+
+#img_explanation{
+	max-height: 130px; 
+	min-height: 130px; 
 }
 
