@@ -7,17 +7,22 @@ var type = upload.single('pitcure');
 
 /* GET admin page. */
 router.get('/adminwork', function(req, res, next) {
-	res.render('adminwork', { title: '' });
+	res.render('adminwork', { error: '' });
 });
 
 router.post('/insertWork', type ,function(req, res) {
-
-console.log(req.file);
-console.log(req.body.description);
-
-	mysql.insertMyWork(req.body.workName,req.body.description,req.file.path,function(data){
-		res.render('adminwork', { title: '' });
-	});
+	if((req.body.workName ==null || req.body.workName.length==0) ||
+		(req.body.labor == null || req.body.workName.labor==0)  ||
+		(req.body.bareMetal == null || req.body.bareMetal==0)  ||
+		(req.body.jewel == null || req.body.jewel==0)  ||
+		(req.body.description == null || req.body.description==0)  ||
+		(req.file  == null)){
+			res.render('adminwork', { error: 'すべての項目を埋めてください。' });
+	}else{
+			mysql.insertMyWork(req.body.workName,req.body.labor,req.body.bareMetal,req.body.jewel,req.body.description,req.file.path,function(data){
+				res.render('adminwork', { error: '' });
+		});
+	}
 	
 });
 

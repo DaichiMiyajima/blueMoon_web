@@ -39,9 +39,6 @@ app.use('/public',express.static(__dirname + '/public'));
 app.use('/views/assets',express.static(__dirname + '/views/assets'));
 //app.use(multer({dest:'../public/uploadfiles/'}));
 
-var upload = multer({ dest: '../public/uploadfiles/'});
-var type = upload.single('pitcure');
-
 app.use('/', index);
 app.post('/appform', appform);
 app.get('/work', work);

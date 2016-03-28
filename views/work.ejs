@@ -48,6 +48,9 @@
 							</div>
 							<div class="card-content">
 								<h1 class="card-title"><%= data[i].name %></h1>
+								<p class="card-text">参照金額：<%= data[i].sum %>円</p>
+								<p>(工賃代：<%= data[i].labor %>円 + 地金代：<%= data[i].baremetal %>円 + 宝石代：<%= data[i].jewel %>円)</p>
+								<hr/>
 								<p class="card-text"><%= data[i].description %></p>
 							</div>
 							<!--<div class="card-link">
