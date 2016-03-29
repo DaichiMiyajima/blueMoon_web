@@ -60,6 +60,16 @@ app.get('/sitemap.xml', function(req, res) {
 	
 });
 
+app.get('/robot.txt', function(req, res) {
+	var parser = new xml2js.Parser();
+	fs.readFile(__dirname + '/robot.txt', function (err, data) {
+		
+		res.send(data);
+		
+	});
+	
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 	var err = new Error('Not Found');
