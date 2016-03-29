@@ -60,7 +60,7 @@ app.get('/sitemap.xml', function(req, res) {
 	
 });
 
-app.get('/robot.txt', function(req, res) {
+app.get('/robots.txt', function(req, res) {
 	var parser = new xml2js.Parser();
 	fs.readFile(__dirname + '/robot.txt', function (err, data) {
 		
