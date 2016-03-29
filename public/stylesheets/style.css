@@ -64,8 +64,8 @@
 }
 
 #moonartreform{
-	color: #000;
-  background-color: #FFFFFF;
+　　color: #000;
+  　background-color: #FFFFFF;
 }
 
 .border{
@@ -75,8 +75,13 @@
     background-image: -webkit-linear-gradient(left, #ccc, #333, #ccc);
 }
 
+
 #img_explanation{
-	max-height: 130px; 
-	min-height: 130px; 
+　　max-height: 130px; 
+　　min-height: 130px; 
 }
 
+.form-control
+{
+　　font-size: 16px ;
+}
