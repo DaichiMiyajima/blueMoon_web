@@ -62,9 +62,8 @@ app.get('/sitemap.xml', function(req, res) {
 
 app.get('/robots.txt', function(req, res) {
 	var parser = new xml2js.Parser();
-	fs.readFile(__dirname + '/robots.txt', function (err, data) {
+	fs.readFile(__dirname + '/robots.txt', 'utf-8',function (err, data) {
 		res.send(data);
-		
 	});
 	
 });
