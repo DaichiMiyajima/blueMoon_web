@@ -62,7 +62,7 @@ app.get('/sitemap.xml', function(req, res) {
 
 app.get('/robots.txt', function(req, res) {
 	fs.readFile(__dirname + '/robots.txt', 'utf-8',function (err, data) {
-	
+
 		res.send(data);
 	});
 	
