@@ -1,3 +1,8 @@
+$(document).ready(function(){
+	writeHeader();
+	writeFooter();
+});
+
 function writeHeader(){
 	$.ajax({
 		url: "../public/commonview/header/header.html", 
