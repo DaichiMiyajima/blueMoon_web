@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /views/adminwork.ejs
 
+
 Sitemap: http://moonart-craft.com/sitemap.xml
