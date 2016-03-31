@@ -80,6 +80,10 @@
 	min-height:130px !important; 
 }
 
+#topimage{
+	width:100%;
+}
+
 .form-control
 {
 	font-size: 16px;
